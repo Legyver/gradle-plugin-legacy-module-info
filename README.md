@@ -24,15 +24,18 @@ plugins {
 ```groovy
 legacyJavaModuleInfo {
     //add module-info for these non-modular jars
+    //create a module for the below jar called 'google.cloud.core'
     module('google-cloud-core-2.4.0.jar') {
         //this will go into module-info in new google 'google-cloud-core-2.4.0.jar'
         requires('com.google.auth')
         exports('com.google.cloud')
     }
+    //create a module for the below jar called 'google.cloud.core.http'
     module('google-cloud-core-http-2.4.0.jar') {
         //this will go into module-info
         exports('com.google.cloud.http')
     }
+    //create a module for the below jar called 'google.cloud.storage'
     module('google-cloud-storage-2.4.1.jar') {
         //this will go into module-info
         requires('com.google.auth')
