@@ -1,7 +1,7 @@
 # gradle-plugin-legacy-module-info
 Plugin to generate module-info for non-modular dependencies
 
-#Usage
+# Usage
 1. Clone the project and install it into mavenLocal
 ```shell
 gradlew publishToMavenLocal
@@ -64,5 +64,4 @@ configurations.implementation {
     exclude group: 'com.google.guava', module: 'listenablefuture'
     //not a complete listing
 }
-
 ```
