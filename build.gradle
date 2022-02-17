@@ -1,0 +1,27 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+group 'com.legyver'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    implementation 'org.ow2.asm:asm:8.0.1'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+gradlePlugin {
+    plugins {
+        // here we register our plugin with an ID
+        register("com.legyver.legacy-java-module-info") {
+            id = "com.legyver.legacy-java-module-info"
+            implementationClass = "com.legyver.gradle.legacymod.LegacyModuleInfoPlugin"
+        }
+    }
+}
+
